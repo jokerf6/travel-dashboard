@@ -260,7 +260,6 @@ export default function Trip(props: {
                     className={`flex  w-full gap-1  flex-col  p-[10px]   rounded-t-md shadow-md`}
                   >
                     <h1 className=" font-semibold text-[18px]">{item.title}</h1>
-                    <h1 className=" font-bold text-[21px]">{item.price}$</h1>
                     <hr />
                     <div className=" flex justify-between items-center">
                       <h1 className=" text-[18px] font-bold">Included</h1>
@@ -278,22 +277,22 @@ export default function Trip(props: {
                     <div className=" flex flex-col my-[10px] ml-[5px]">
                       {item.priceInclude.map((item2: any) => {
                         return (
-                          <div
-                            key={item2.id}
-                            className=" flex justify-between items-center"
-                          >
-                            <span>{item2.brief}</span>
-                            <Button
-                              bgColor="red"
-                              color="white"
-                              text="Delete"
-                              classBut={"w-fit"}
-                              onClick={() => {
-                                mutation.mutate(
-                                  TRIPS + "/" + item2.id + "/PriceIncluded"
-                                );
-                              }}
-                            />
+                          <div key={item2.id} className=" flex flex-col gap-2">
+                            <div className=" flex justify-between items-center">
+                              <span>{item2.brief}</span>
+                              <span>{item2.price}</span>
+                              <Button
+                                bgColor="red"
+                                color="white"
+                                text="Delete"
+                                classBut={"w-full"}
+                                onClick={() => {
+                                  mutation.mutate(
+                                    TRIPS + "/" + item2.id + "/PriceIncluded"
+                                  );
+                                }}
+                              />
+                            </div>
                           </div>
                         );
                       })}
