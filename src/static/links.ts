@@ -1,4 +1,4 @@
-export const SERVER = "http://127.0.0.1:3210/api/v1";
+export const SERVER = "https://dashboard.egyptsunny.com/api/v1";
 // Media Link
 export const MEDIA = `${SERVER}/media?media=`;
 

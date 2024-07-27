@@ -260,7 +260,7 @@ export default function Trip(props: {
                     className={`flex  w-full gap-1  flex-col  p-[10px]   rounded-t-md shadow-md`}
                   >
                     <h1 className=" font-semibold text-[18px]">{item.title}</h1>
-                    <h1 className=" font-bold text-[21px]">{item.price}$</h1>
+               
                     <hr />
                     <div className=" flex justify-between items-center">
                       <h1 className=" text-[18px] font-bold">Included</h1>
@@ -276,13 +276,17 @@ export default function Trip(props: {
                       />
                     </div>
                     <div className=" flex flex-col my-[10px] ml-[5px]">
-                      {item.priceInclude.map((item2: any) => {
+                      {item.priceInclude.sort((a:any,b:any)=>b.price - a.price).map((item2: any) => {
                         return (
                           <div
                             key={item2.id}
                             className=" flex justify-between items-center"
                           >
+                            <div className=" flex flex-col gap-1">
                             <span>{item2.brief}</span>
+                            <span>{item2.price}</span>
+
+                            </div>
                             <Button
                               bgColor="red"
                               color="white"

@@ -11,20 +11,16 @@ export async function PriceService(
   e.preventDefault();
 
   const name = e.target.title.value;
-  const price = e.target.price.value;
 
   // ************** Name And Brief Testing******************
 
   if (!name) {
     return error("Please Fill All Fields");
   }
-  if (price <= 0) {
-    return error("Please Fill All Fields");
-  }
+ 
   // **************handel Request if we want to upload file******************
   const requestJson = JSON.stringify({
     title: name,
-    price,
   });
   const response = await requestService.patch(
     TRIPS + "/" + id + "/Prices",

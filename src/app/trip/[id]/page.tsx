@@ -194,7 +194,6 @@ const Page: NextPage = (req, res) => {
         onSubmit={(e) => PRICE.mutate(e)}
       >
         <Inputs text="title" holder="Price title" name="title" />
-        <Inputs type="number" text="price" holder="Price price" name="price" />
 
         <div className=" flex gap-1 w-full mt-[10px]">
           <button
@@ -223,6 +222,7 @@ const Page: NextPage = (req, res) => {
         onSubmit={(e) => PIN.mutate(e)}
       >
         <Inputs text="title" holder="Price included" name="title" />
+       <Inputs type="number" text="price" holder="Price price" name="price" />
 
         <div className=" flex gap-1 w-full mt-[10px]">
           <button
