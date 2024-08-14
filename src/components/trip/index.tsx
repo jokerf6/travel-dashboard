@@ -276,7 +276,7 @@ export default function Trip(props: {
                       />
                     </div>
                     <div className=" flex flex-col my-[10px] ml-[5px]">
-                      {item.priceInclude.sort((a:any,b:any)=>b.price - a.price).map((item2: any) => {
+                      {item.priceInclude.map((item2: any) => {
                         return (
                           <div
                             key={item2.id}
